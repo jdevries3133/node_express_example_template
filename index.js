@@ -6,6 +6,7 @@ app.get("/", (req, res) => {
     <p>
       Thanks for visiting! Your browser is
       <pre>${req.headers["user-agent"]}</pre>
+      <p>Today's time is ${new Date().toLocaleTimeString()}</p>
     </p>`
   );
 });
