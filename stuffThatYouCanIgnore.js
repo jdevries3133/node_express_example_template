@@ -12,13 +12,17 @@
 
 const express = require("express");
 const bodyParser = require("body-parser");
+const multer = require("multer");
+
+forms = multer();
 
 const app = express();
 
+app.use(forms.array()); 
 app.use(express.json({ type: "application/json" }));
 app.use(
   bodyParser.urlencoded({
-    type: "application/x-www-form-urlencoded",
+    type: "multipart/form-data",
     extended: false,
   })
 );
